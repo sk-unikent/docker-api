@@ -10,9 +10,9 @@ $metadata['localhost'] = array(
 	'SingleLogoutService' => 'http://localhost:8081/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp',
 );
 
-$metadata['myfolio-dev'] = array(
-	'AssertionConsumerService' => 'http://myfolio-dev.kent.ac.uk/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
-	'SingleLogoutService' => 'http://myfolio-dev.kent.ac.uk/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp',
+$metadata['api-dev'] = array(
+	'AssertionConsumerService' => 'http://api-dev.kent.ac.uk/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp',
+	'SingleLogoutService' => 'http://api-dev.kent.ac.uk/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp',
 );
 
 $metadata['kar-dev'] = array(

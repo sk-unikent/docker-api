@@ -1,6 +1,6 @@
 node 'default'
 {
-    include myfolio::base
+    include api::base
 
     service {
         ['nginx', 'crond', 'php56-php-fpm']:
@@ -11,23 +11,23 @@ node 'default'
         '/etc/nginx/conf.d/default.conf':
             ensure => absent;
 
-        '/etc/nginx/conf.d/myfolio-dev.kent.ac.uk.conf':
+        '/etc/nginx/conf.d/api-dev.kent.ac.uk.conf':
             ensure => present,
-            source => 'puppet:///modules/webfarm/myfolio-dev.kent.ac.uk.conf';
+            source => 'puppet:///modules/webfarm/api-dev.kent.ac.uk.conf';
 
-        '/var/www/vhosts/myfolio-dev.kent.ac.uk/public/myfolio':
+        '/var/www/vhosts/api-dev.kent.ac.uk/public/api':
             ensure => link,
-            target => '/data/myfolio/htdocs';
+            target => '/data/api/htdocs';
 
-        '/var/www/vhosts/myfolio-dev.kent.ac.uk/public/_sp':
+        '/var/www/vhosts/api-dev.kent.ac.uk/public/_sp':
             ensure => link,
-            target => '/var/www/vhosts/myfolio-dev.kent.ac.uk/sp/simplesamlphp/www';
+            target => '/var/www/vhosts/api-dev.kent.ac.uk/sp/simplesamlphp/www';
 
         '/opt/remi/php56/root/etc/php-fpm.d/www.conf':
             ensure => absent;
 
-        '/opt/remi/php56/root/etc/php-fpm.d/myfolio-dev.kent.ac.uk.conf':
+        '/opt/remi/php56/root/etc/php-fpm.d/api-dev.kent.ac.uk.conf':
             ensure => present,
-            source => 'puppet:///modules/webfarm/myfolio-pool.conf';
+            source => 'puppet:///modules/webfarm/api-pool.conf';
     }
 }

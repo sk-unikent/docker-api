@@ -15,7 +15,7 @@ RUN ln -s /usr/bin/php56 /usr/bin/php && \
     ln -s /usr/bin/php56-cgi /usr/bin/php-cgi && \
     ln -s /usr/bin/php56-pear /usr/bin/php-pear && \
     ln -s /usr/bin/php56-phar /usr/bin/php-phar
-ADD ./shared/simplesamlphp /var/www/vhosts/myfolio-dev.kent.ac.uk/sp/simplesamlphp
+ADD ./shared/simplesamlphp /var/www/vhosts/api-dev.kent.ac.uk/sp/simplesamlphp
 ADD ./shared/puppet /puppet
 RUN yum install -y puppet && \
     puppet apply --modulepath=/puppet/modules /puppet/manifests/site.pp && \

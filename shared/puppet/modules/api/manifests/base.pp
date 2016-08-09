@@ -1,11 +1,11 @@
-class myfolio::base {
+class api::base {
     group {
         'pkg':
             ensure => 'present';
     }
 
     user {
-        ['w3myfolio', 'w3admin']:
+        ['w3api', 'w3admin']:
             ensure => 'present',
             managehome => true,
             groups => ['pkg'],
@@ -17,6 +17,6 @@ class myfolio::base {
     }
 
     webfarm::base::vhost {
-        'myfolio-dev.kent.ac.uk': ;
+        'api-dev.kent.ac.uk': ;
     }
 }

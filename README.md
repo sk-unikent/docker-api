@@ -1,2 +1,2 @@
-# docker-myfolio-base
-myfolio development environment base docker image
+# docker-api-base
+api development environment base docker image
