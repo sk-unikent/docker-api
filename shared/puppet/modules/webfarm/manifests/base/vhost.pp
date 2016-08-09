@@ -10,11 +10,6 @@ define webfarm::base::vhost($vhost = $title, $owner = 'w3admin', $writeable = 'w
             require => File["/var/www/vhosts/${vhost}"],
             owner => $owner;
 
-        "/var/www/vhosts/${vhost}/public":
-            ensure => directory,
-            owner => $owner,
-            replace => false;
-
         [
             "/var/www/vhosts/${vhost}/writable/sessions",
             "/var/www/vhosts/${vhost}/writable/wsdlcache",

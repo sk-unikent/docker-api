@@ -15,13 +15,9 @@ node 'default'
             ensure => present,
             source => 'puppet:///modules/webfarm/api-dev.kent.ac.uk.conf';
 
-        '/var/www/vhosts/api-dev.kent.ac.uk/public/api':
+        '/var/www/vhosts/api-dev.kent.ac.uk/public':
             ensure => link,
-            target => '/data/api/htdocs';
-
-        '/var/www/vhosts/api-dev.kent.ac.uk/public/_sp':
-            ensure => link,
-            target => '/var/www/vhosts/api-dev.kent.ac.uk/sp/simplesamlphp/www';
+            target => '/data/api/public';
 
         '/opt/remi/php56/root/etc/php-fpm.d/www.conf':
             ensure => absent;
